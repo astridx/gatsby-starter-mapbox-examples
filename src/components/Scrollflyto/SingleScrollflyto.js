@@ -13,19 +13,19 @@ const SingleScollflyto = ({ title, text }) => {
 }
 
 const SingleScollflytoWrapper = styled.section`
-
+  margin: 200px 0;
   padding: 25px 50px;
   line-height: 25px;
   border-bottom: 1px solid #ddd;
-  opacity: 0.25;
+  color: gray;
   font-size: 13px;
 }
 section.active {
-  opacity: 1;
+  color: black;
 }
 section:last-child {
   border-bottom: none;
-  margin-bottom: 200px;
+  margin-bottom: 400px;
 }
 `
 

@@ -3,15 +3,17 @@ import Layout from 'components/Layout'
 import Map from 'components/Map'
 import Scrollflyto from '../components/Scrollflyto/Scrollflyto'
 import scrollflyto from '../constants/scrollflyto'
-import { Flex } from 'components/Grid'
 import styled from 'style'
+import Sidebar from 'components/Sidebar'
+import { Box, Flex } from 'components/Grid'
 
 const MapPage = () => {
+  
   const [scrollPosition, setSrollPosition] = useState(0)
   const handleScroll = () => {
+    console.log('kkkkk');
     var activeName = scrollflyto[0].title
     for (var i = 0; i < scrollflyto.length; i++) {
-      console.log(scrollflyto[i].title)
       if (isElementOnScreen(scrollflyto[i].title)) {
         setActiveChapter(scrollflyto[i].title, i)
         break
@@ -39,7 +41,7 @@ const MapPage = () => {
   }
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll, { passive: true })
+    window.addEventListener('scroll', handleScroll, true)
 
     return () => {
       window.removeEventListener('scroll', handleScroll)
@@ -49,8 +51,13 @@ const MapPage = () => {
   return (
     <Layout title="Map with Sidebar">
       <Wrapper>
+        <Sidebar>
+          <Box p="1rem">
+          <Scrollflyto 
+            scrollflyto={scrollflyto}/>
+          </Box>
+        </Sidebar>
         <Map />
-        <Scrollflyto />
       </Wrapper>
     </Layout>
   )

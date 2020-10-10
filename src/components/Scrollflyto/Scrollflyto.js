@@ -1,13 +1,12 @@
 import React from 'react'
-import scollflyto from '../../constants/scrollflyto'
 import SingleScrollflyto from './SingleScrollflyto'
 import styled from 'styled-components'
 
-const Scrollflyto = () => {
+const Scrollflyto = (props) => {
   return (
     <ScrollflytoContainer>
       <ScrollflytoWrapper>
-        {scollflyto.map((item, index) => (
+        {props.scrollflyto.map((item, index) => (
           <SingleScrollflyto key={index} title={item.title} text={item.text} />
         ))}
       </ScrollflytoWrapper>
@@ -16,12 +15,11 @@ const Scrollflyto = () => {
 }
 
 const ScrollflytoContainer = styled.section`
-  width: 50%;
+  max-height: 400px;
 `
 
 const ScrollflytoWrapper = styled.div`
   font-family: sans-serif;
-  overflow-y: scroll;
   background-color: #fafafa;
 `
 

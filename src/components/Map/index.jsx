@@ -186,12 +186,12 @@ Map.propTypes = {
 Map.defaultProps = {
   width: 'auto',
   height: '100%',
-  center: [0, 0],
-  zoom: 0,
+  center: [7.221275, 50.326111],
+  zoom: 17.5,
   bounds: null,
   minZoom: 0,
   maxZoom: 24,
-  styles: ['light-v9', 'dark-v9', 'streets-v11'],
+  styles: ['streets-v11', 'light-v9', 'dark-v9'],
   padding: 0.1, // padding around bounds as a proportion
   sources: {},
   layers: [],
