@@ -62,6 +62,7 @@ See another [example](https://docs.mapbox.com/mapbox-gl-js/example/scroll-fly-to
 
 You change the content in the file [src/constants/scrollflyto.js](https://github.com/astridx/gatsby-starter-mapbox-examples/blob/master/src/constants/scrollflyto.js)
 
+Option | Description
 bearing | The initial bearing (rotation) of the map, measured in degrees counter-clockwise from north. If bearing is not specified in the constructor options, Mapbox GL JS will look for it in the map's style object. If it is not specified in the style, either, it will default to 0 .
 --- | ---
 pitch | The initial pitch (tilt) of the map, measured in degrees away from the plane of the screen (0-60). If pitch is not specified in the constructor options, Mapbox GL JS will look for it in the map's style object. If it is not specified in the style, either, it will default to 0 .
