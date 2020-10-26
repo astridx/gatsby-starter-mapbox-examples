@@ -1,8 +1,8 @@
 import React from 'react'
 import SingleScrollflyto from './SingleScrollflyto'
-import styled from 'styled-components'
+import styled from 'style'
 
-const Scrollflyto = (props) => {
+const Scrollflyto = props => {
   return (
     <ScrollflytoContainer>
       <ScrollflytoWrapper>

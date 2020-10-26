@@ -8,10 +8,8 @@ import Sidebar from 'components/Sidebar'
 import { Box, Flex } from 'components/Grid'
 
 const MapPage = () => {
-  
   const [scrollPosition, setSrollPosition] = useState(0)
   const handleScroll = () => {
-    console.log('kkkkk');
     var activeName = scrollflyto[0].title
     for (var i = 0; i < scrollflyto.length; i++) {
       if (isElementOnScreen(scrollflyto[i].title)) {
@@ -53,8 +51,7 @@ const MapPage = () => {
       <Wrapper>
         <Sidebar>
           <Box p="1rem">
-          <Scrollflyto 
-            scrollflyto={scrollflyto}/>
+            <Scrollflyto scrollflyto={scrollflyto} />
           </Box>
         </Sidebar>
         <Map />

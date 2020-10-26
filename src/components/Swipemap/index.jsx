@@ -8,10 +8,11 @@ import { hasWindow } from 'util/dom'
 import { getCenterAndZoom } from './util'
 import StyleSelector from './StyleSelector'
 import MapboxDirections from '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions'
+import Compare from 'mapbox-gl-compare'
+import 'mapbox-gl-compare/dist/mapbox-gl-compare.css'
 
 import { siteMetadata } from '../../../gatsby-config'
 
-// This wrapper must be positioned relative for the map to be able to lay itself out properly
 const Wrapper = styled.div`
   width: ${({ width }) => width};
   height: ${({ height }) => height};
@@ -19,7 +20,7 @@ const Wrapper = styled.div`
   flex: 1 0 auto;
 `
 
-const Map = ({
+const Swipemap = ({
   width,
   height,
   zoom,
@@ -41,28 +42,24 @@ const Map = ({
     )
   }
 
-  // if there is no window, we cannot render this component
   if (!hasWindow) {
     return null
   }
 
-  // this ref holds the map DOM node so that we can pass it into Mapbox GL
   const mapNode = useRef(null)
+  const mapNode2 = useRef(null)
 
-  // this ref holds the map object once we have instantiated it, so that we
-  // can use it in other hooks
   const mapRef = useRef(null)
-  // construct the map within an effect that has no dependencies
-  // this allows us to construct it only once at the time the
-  // component is constructed.
+  const mapRef2 = useRef(null)
+
   useEffect(() => {
     let mapCenter = center
     let mapZoom = zoom
 
-    // If bounds are available, use these to establish center and zoom when map first loads
     if (bounds && bounds.length === 4) {
       const { center: boundsCenter, zoom: boundsZoom } = getCenterAndZoom(
         mapNode.current,
+        mapNode2.current,
         bounds,
         padding
       )
@@ -70,11 +67,10 @@ const Map = ({
       mapZoom = boundsZoom
     }
 
-    // Token must be set before constructing map
     mapboxgl.accessToken = mapboxToken
 
     const map = new mapboxgl.Map({
-      container: mapNode.current,
+      container: 'eins',
       style: `mapbox://styles/mapbox/${styles[0]}`,
       center: mapCenter,
       zoom: mapZoom,
@@ -82,9 +78,22 @@ const Map = ({
       maxZoom,
     })
     mapRef.current = map
-    window.map = map // for easier debugging and querying via console
+    window.map = map
 
-    map.addControl(new mapboxgl.NavigationControl(), 'top-right')
+    const map2 = new mapboxgl.Map({
+      container: 'zwei',
+      style: `mapbox://styles/mapbox/${styles[3]}`,
+      center: mapCenter,
+      zoom: mapZoom,
+      minZoom,
+      maxZoom,
+    })
+    mapRef2.current = map2
+    window.map2 = map2 // for easier debugging and querying via console
+
+    var compare = new Compare(map, map2, '#swipewrapper', {})
+
+    map2.addControl(new mapboxgl.NavigationControl(), 'top-right')
 
     if (styles.length > 1) {
       map.addControl(
@@ -123,28 +132,27 @@ const Map = ({
       })
     })
 
-    // hook up map events here, such as click, mouseenter, mouseleave
-    // e.g., map.on('click', (e) => {})
-
-    // when this component is destroyed, remove the map
     return () => {
       map.remove()
     }
   }, [])
 
-  // You can use other `useEffect` hooks to update the state of the map
-  // based on incoming props.  Just beware that you might need to add additional
-  // refs to share objects or state between hooks.
-
   return (
-    <Wrapper width={width} height={height}>
-      <div ref={mapNode} style={{ width: '100%', height: '100%' }} />
-      {/* <StyleSelector map={mapRef.current} styles={styles} token={mapboxToken} /> */}
+    <Wrapper id="swipewrapper" width={width} height={height}>
+      <div
+        id="eins"
+        style={{ top: 0, position: 'absolute', width: '100%', bottom: 0 }}
+      />
+      <div
+        id="zwei"
+        style={{ top: 0, position: 'absolute', width: '100%', bottom: 0 }}
+      />
+      {/*  <StyleSelector map={mapRef.current} styles={styles} token={mapboxToken} /> */}
     </Wrapper>
   )
 }
 
-Map.propTypes = {
+Swipemap.propTypes = {
   width: PropTypes.string,
   height: PropTypes.string,
   center: PropTypes.arrayOf(PropTypes.number),
@@ -159,7 +167,7 @@ Map.propTypes = {
   directions: PropTypes.arrayOf(PropTypes.object),
 }
 
-Map.defaultProps = {
+Swipemap.defaultProps = {
   width: 'auto',
   height: '100%',
   center: [7.221275, 50.326111],
@@ -167,11 +175,11 @@ Map.defaultProps = {
   bounds: null,
   minZoom: 0,
   maxZoom: 24,
-  styles: ['streets-v11', 'light-v9', 'dark-v9'],
-  padding: 0.1, // padding around bounds as a proportion
+  styles: ['streets-v11', 'light-v9', 'dark-v9', 'satellite-v9'],
+  padding: 0.1,
   sources: {},
   layers: [],
   directions: [],
 }
 
-export default Map
+export default Swipemap

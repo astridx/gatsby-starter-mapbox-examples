@@ -64,8 +64,23 @@ const Header = () => (
       <NavLink to="/map" activeClassName="nav-active">
         Map with Sidebar
       </NavLink>
+      <NavLink to="/map-geojson-simple" activeClassName="nav-active">
+        Map with GeoJson Layer (einfach)
+      </NavLink>
+      <NavLink to="/map-geojson-pro" activeClassName="nav-active">
+        Map with GeoJson Layer (erweitert)
+      </NavLink>
       <NavLink to="/map-full" activeClassName="nav-active">
         Full Screen Map
+      </NavLink>
+      <NavLink to="/map-full-plus-find-elevation" activeClassName="nav-active">
+        Find Elevation
+      </NavLink>
+      <NavLink to="/map-direction" activeClassName="nav-active">
+        Map with Direction
+      </NavLink>
+      <NavLink to="/map-swipe" activeClassName="nav-active">
+        Compare
       </NavLink>
       <NavLink to="/scrollflyto" activeClassName="nav-active">
         Scroll Fly To
