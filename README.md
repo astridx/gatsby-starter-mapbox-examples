@@ -122,6 +122,16 @@ What is the best way to get from A to B. Or: I want to show you how I got from A
 
 #### Adapt to your wishes
 
+### Scale Control
+
+#### Adapt to your wishes
 
 
+### Style Switcher
+
+#### Adapt to your wishes
+
+### Layer Switcher
+
+#### Adapt to your wishes
 

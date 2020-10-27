@@ -8,7 +8,8 @@ import { hasWindow } from 'util/dom'
 import { getCenterAndZoom } from './util'
 import StyleSelector from './StyleSelector'
 import MapboxDirections from '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions'
-
+import { MapboxStyleSwitcherControl } from 'mapbox-gl-style-switcher'
+import 'mapbox-gl-style-switcher/styles.css'
 import { siteMetadata } from '../../../gatsby-config'
 
 // This wrapper must be positioned relative for the map to be able to lay itself out properly
@@ -32,6 +33,9 @@ const Map = ({
   minZoom,
   maxZoom,
   directions,
+  scale,
+  styleSwitcher,
+  layerSwitcher,
 }) => {
   const { mapboxToken } = siteMetadata
 
@@ -121,6 +125,27 @@ const Map = ({
         direction.setDestination(directionData.destination)
         map.addControl(direction, 'top-right')
       })
+
+      scale.forEach(s => {
+        map.addControl(
+          new mapboxgl.ScaleControl({
+            maxWidth: s.maxWidth,
+            unit: s.unit,
+          })
+        )
+      })
+
+      styleSwitcher.forEach(ss => {
+        console.log(ss.styles + ss.position)
+        map.addControl(new MapboxStyleSwitcherControl(ss.styles, ss.position))
+        /*   map.addControl(
+          
+        );*/
+      })
+
+      layerSwitcher.forEach(ls => {
+        console.log(ls)
+      })
     })
 
     // hook up map events here, such as click, mouseenter, mouseleave
@@ -157,6 +182,9 @@ Map.propTypes = {
   sources: PropTypes.object,
   layers: PropTypes.arrayOf(PropTypes.object),
   directions: PropTypes.arrayOf(PropTypes.object),
+  scale: PropTypes.arrayOf(PropTypes.object),
+  styleSwitcher: PropTypes.arrayOf(PropTypes.object),
+  layerSwitcher: PropTypes.arrayOf(PropTypes.object),
 }
 
 Map.defaultProps = {
@@ -167,11 +195,14 @@ Map.defaultProps = {
   bounds: null,
   minZoom: 0,
   maxZoom: 24,
-  styles: ['streets-v11', 'light-v9', 'dark-v9'],
+  styles: ['streets-v11'],
   padding: 0.1, // padding around bounds as a proportion
   sources: {},
   layers: [],
   directions: [],
+  scale: [],
+  styleSwitcher: [],
+  layerSwitcher: [],
 }
 
 export default Map

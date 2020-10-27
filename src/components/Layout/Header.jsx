@@ -67,8 +67,14 @@ const Header = () => (
       <NavLink to="/map-geojson-simple" activeClassName="nav-active">
         Map with GeoJson Layer (einfach)
       </NavLink>
-      <NavLink to="/map-geojson-pro" activeClassName="nav-active">
-        Map with GeoJson Layer (erweitert)
+      <NavLink to="/map-show-and-hide-layers" activeClassName="nav-active">
+        Map with Layer Control
+      </NavLink>
+      <NavLink to="/map-scale-control" activeClassName="nav-active">
+        Map with Scale Control
+      </NavLink>
+      <NavLink to="/map-style-switcher" activeClassName="nav-active">
+        Map with Style Control (Switcher)
       </NavLink>
       <NavLink to="/map-full" activeClassName="nav-active">
         Full Screen Map
