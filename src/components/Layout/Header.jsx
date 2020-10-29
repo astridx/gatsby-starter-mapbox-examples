@@ -61,35 +61,35 @@ const Header = () => (
       </Link>
     </Title>
     <NavBar>
+      <NavLink to="/map-full" activeClassName="nav-active">
+        Full Screen Map
+      </NavLink>
       <NavLink to="/map" activeClassName="nav-active">
         Map with Sidebar
       </NavLink>
       <NavLink to="/map-geojson-simple" activeClassName="nav-active">
-        Map with GeoJson Layer (einfach)
+        Map with GeoJson Layer (simple)
       </NavLink>
-      <NavLink to="/map-show-and-hide-layers" activeClassName="nav-active">
-        Map with Layer Control
-      </NavLink>
-      <NavLink to="/map-scale-control" activeClassName="nav-active">
-        Map with Scale Control
-      </NavLink>
-      <NavLink to="/map-style-switcher" activeClassName="nav-active">
-        Map with Style Control (Switcher)
-      </NavLink>
-      <NavLink to="/map-full" activeClassName="nav-active">
-        Full Screen Map
+      <NavLink to="/scrollflyto" activeClassName="nav-active">
+        Scroll Fly To
       </NavLink>
       <NavLink to="/map-full-plus-find-elevation" activeClassName="nav-active">
         Find Elevation
       </NavLink>
-      <NavLink to="/map-direction" activeClassName="nav-active">
-        Map with Direction
+      <NavLink to="/map-show-and-hide-layers" activeClassName="nav-active">
+        Map with Layer Control
       </NavLink>
       <NavLink to="/map-swipe" activeClassName="nav-active">
         Compare
       </NavLink>
-      <NavLink to="/scrollflyto" activeClassName="nav-active">
-        Scroll Fly To
+      <NavLink to="/map-direction" activeClassName="nav-active">
+        Map with Direction
+      </NavLink>
+      <NavLink to="/map-style-switcher" activeClassName="nav-active">
+        Map with Style Control (Switcher)
+      </NavLink>
+      <NavLink to="/map-scale-control" activeClassName="nav-active">
+        Map with Scale Control
       </NavLink>
     </NavBar>
   </Wrapper>
