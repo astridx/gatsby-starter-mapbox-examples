@@ -3,7 +3,7 @@ const googleAnalyticsId = `UA-XXXXX`
 module.exports = {
   pathPrefix: `/gatsbystarter/gatsby-starter-mapbox-examples`,
   siteMetadata: {
-    siteUrl: `https://gatsby-starter-mapbox.netlify.com/`,
+    siteUrl: `https://astridx.github.io/gatsbystarter/gatsby-starter-mapbox-examples/`,
     title: `Gatsby Mapbox GL Starter`,
     description: `Get up and running quickly with a Gatsby starter that includes a basic setup for Mapbox GL`,
     author: `Brendan C. Ward`,
@@ -28,14 +28,14 @@ module.exports = {
       },
     },
     `gatsby-plugin-catch-links`,
-    `gatsby-plugin-sitemap`,
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: googleAnalyticsId,
-        anonymize: true,
-      },
-    },
+   // `gatsby-plugin-sitemap`,
+   // {
+    //  resolve: `gatsby-plugin-google-analytics`,
+     // options: {
+     //   trackingId: googleAnalyticsId,
+     //   anonymize: true,
+     // },
+    //},
     // {
     //   resolve: `gatsby-plugin-manifest`,
     //   options: {
