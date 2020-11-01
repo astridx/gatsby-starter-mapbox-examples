@@ -1,36 +1,24 @@
 # Gatsby starter with Mapbox GL
 
-The starter https://github.com/brendan-ward/gatsby-starter-mapbox gets you going quickly with Mapbox GL in Gatsby. It uses React hooks to wrap the Mapbox GL JS object and I build my examples on this repo. 
-
 __This starter__ is build on the starter https://github.com/brendan-ward/gatsby-starter-mapbox. It gets you going quickly with Mapbox GL in Gatsby. It uses React hooks to wrap the Mapbox GL JS object and I build my examples on this repo.
-
-Because Mapbox GL is provided as a native JS object within `components/Map/index.jsx`, instead of a React Component, you need to coordinate application state directly with the map object.
 
 [Demo](https://astridx.github.io/gatsbystarter/gatsby-starter-mapbox-examples/)
 
-The menu items in the navigation can be changed in the file `gatsby-starter-mapbox-examples/src/components/Layout/Header.jsx`!
+The menu items in the navigation can be changed in the file [Header.jsx](https://github.com/astridx/gatsby-starter-mapbox-examples/blob/da0f115b8bc8c52d0b7063ede429d1ce5fb99b92/src/components/Layout/Header.jsx#L63)!
 
 ## Installation
 
-### Gatsby
-
 You will need to know Gatsby to use this starter. If you are interested in learning more about building your first Gatsby site, check out the [Gatsby.js Tutorials](https://www.gatsbyjs.com/tutorial/).
 
-### Initialize the Site
+1. Initialize the Site
 
-You [created a new site](https://www.gatsbyjs.com/tutorial/part-one/) based on a starter using the following command:
-
-```
-gatsby new [SITE_DIRECTORY] [URL_OF_STARTER_GIT_REPO]
-```
-
-For example, to create a site in a `mymapboxglsite` directory with this Gatsby Starter:
+To create a site in a `mymapboxglsite` directory with this Gatsby Starter:
 
 ```
 gatsby new mymapboxglsite https://github.com/astridx/gatsby-starter-mapbox-examples
 ```
 
-### Get Mapbox API token
+2. Get Mapbox API token
 
 You must set the [environment variable](https://www.gatsbyjs.com/docs/environment-variables/) `GATSBY_MAPBOX_API_TOKEN` to your [Mapbox API token](https://docs.mapbox.com/help/how-mapbox-works/access-tokens/). Define an environment config file, `.env.development` and/or `.env.production`, in your root folder. Depending on your active environment, the correct one will be found and its values embedded as environment variables in the browser JavaScript. Add the line 
 
@@ -38,9 +26,30 @@ You must set the [environment variable](https://www.gatsbyjs.com/docs/environmen
 GATSBY_MAPBOX_API_TOKEN='YOUR TOKEN'
 ```
 
-#### Excurs: Configuration
+3. Start the Site
 
-You provide basic map configuration such as initial `zoom` level in the file `src/components/Map`: 
+Start the development mode:
+
+```
+gatsby develop
+```
+
+Open up a new tab in your browser and navigate to http://localhost:8000/
+
+Perfect! This is the beginning of a Gatsby MapBox JS GL site! 
+
+
+## Features
+
+There is a menu item for each example.
+
+### Full Screen Map
+
+![Full Screen Map Gatsby Mapbox GL Starter](https://user-images.githubusercontent.com/9974686/97810139-0f17ce80-1c72-11eb-987f-aea7edadfd6f.png)
+
+#### Adapt to your wishes
+
+I provide basic map configuration such as initial `zoom` level in the file [src/components/Map](https://github.com/astridx/gatsby-starter-mapbox-examples/blob/da0f115b8bc8c52d0b7063ede429d1ce5fb99b92/src/components/Map/index.jsx#L191): 
 
 ```
 width: 'auto',
@@ -50,7 +59,7 @@ zoom: 9.5,
 bounds: null,
 minZoom: 0,
 maxZoom: 24,
-styles: ['streets-v11', 'light-v9', 'dark-v9'],
+styles: ['streets-v11'],
 padding: 0.1,
 sources: {},
 layers: [],
@@ -67,49 +76,29 @@ You can provide optional configuration (for example `sources` and `layers`) acco
 />
 ```
 
-### Start the Site
-
-Start the development mode:
-
-```
-gatsby develop
-```
-
-Open up a new tab in your browser and navigate to http://localhost:8000/
-
-Perfect! This is the beginning of a Gatsby MapBox JS GL site! 
-
-## Features
-
-There is a menu item for each example.
-
-### Full Screen Map
-
-![Full Screen Map Gatsby Mapbox GL Starter](https://user-images.githubusercontent.com/9974686/97588775-239f6100-19fd-11eb-9816-6c5aedc4a3a2.png)
-
-#### Adapt to your wishes
-
 ### Map with Sidebar
 
-![Map with Sidebar Gatsby Mapbox GL Starter](https://user-images.githubusercontent.com/9974686/97588781-24d08e00-19fd-11eb-952c-388a35241b3f.png)
-
+![Map with Sidebar Gatsby Mapbox GL Starter](https://user-images.githubusercontent.com/9974686/97810141-117a2880-1c72-11eb-92b1-6410facee11d.png)
 
 #### Adapt to your wishes
+
+This [example](https://github.com/astridx/gatsby-starter-mapbox-examples/blob/da0f115b8bc8c52d0b7063ede429d1ce5fb99b92/src/pages/mapwithsidebar.jsx#L19) shows you how to add a sidebar. You can see a concrete implementation in the _Scoll Fly to_ example below.
 
 ### Map with GeoJson Layer (simple)
 
-![Full Screen Map with GeoJSON Gatsby Mapbox GL Starter](https://user-images.githubusercontent.com/9974686/97588787-25692480-19fd-11eb-9199-422272267fd8.png)
+![Full Screen Map with GeoJSON Gatsby Mapbox GL Starter](https://user-images.githubusercontent.com/9974686/97810142-12ab5580-1c72-11eb-95a9-ae56e83cc71b.png)
 
 #### Adapt to your wishes
 
+You add a few geodata directly in the code via JSON souce and layer. The [example](https://github.com/astridx/gatsby-starter-mapbox-examples/blob/da0f115b8bc8c52d0b7063ede429d1ce5fb99b92/src/pages/map-geojson-simple.jsx#L6) is worth a thousand words.
+
 ### Scroll Fly To
 
-![Map with Sidebar Gatsby Mapbox GL Starter(1)](https://user-images.githubusercontent.com/9974686/97588790-2601bb00-19fd-11eb-8951-13108382d57f.png)
-
+![Map with Scroll Fly To in Gatsby Mapbox GL Starter](https://user-images.githubusercontent.com/9974686/97810143-13dc8280-1c72-11eb-9c7a-ba29536eeedd.png)
 
 This feature allows you to tell a story using the map.
 
-[Fly to a location](https://astridx.github.io/mapboxexamples/examples/scroll-fly-to.html) based on scroll position in the sidebar. Scroll down through the Points of interest and the map will fly to the location. 
+[Fly to a location](https://astridx.github.io/mapboxexamples/examples/scroll-fly-to.html) based on scroll position in the sidebar. Scroll down through the _Points of interest_ and the map will fly to the location. 
 
 See another [example](https://docs.mapbox.com/mapbox-gl-js/example/scroll-fly-to/).
 
@@ -119,41 +108,46 @@ You change the content in the file [src/constants/scrollflyto.js](https://github
 
 Option | Description
 --- | ---
-bearing | The initial bearing (rotation) of the map, measured in degrees counter-clockwise from north. If bearing is not specified in the constructor options, Mapbox GL JS will look for it in the map's style object. If it is not specified in the style, either, it will default to 0 .
-pitch | The initial pitch (tilt) of the map, measured in degrees away from the plane of the screen (0-60). If pitch is not specified in the constructor options, Mapbox GL JS will look for it in the map's style object. If it is not specified in the style, either, it will default to 0 .
---- | ---
+bearing | The initial bearing (rotation) of the map, measured in degrees counter-clockwise from north. If bearing is not specified in the constructor options, Mapbox GL JS will look for it in the map's style object. If it is not specified in the style, either, it will default to 0.
+pitch | The initial pitch (tilt) of the map, measured in degrees away from the plane of the screen (0-60). If pitch is not specified in the constructor options, Mapbox GL JS will look for it in the map's style object. If it is not specified in the style, either, it will default to 0.
+speed | The average speed of the animation.
+--- | Please visit [MapBox GL Documentation](https://docs.mapbox.com/mapbox-gl-js/api/map/#map#flyto) for all opitons.
 
 ### Find elevations with the Tilequery API 
 
-![Full Screen Map Gatsby Mapbox GL Starter(1)](https://user-images.githubusercontent.com/9974686/97588793-2601bb00-19fd-11eb-9fa8-b47ac9ff56dc.png)
+![Full Screen Map Gatsby Mapbox GL Starter with Query for getting elevation](https://user-images.githubusercontent.com/9974686/97810145-14751900-1c72-11eb-8730-a898c8068eb4.png)
 
-Sometimes it is helpful to get information about a location at the click of a mouse. This is what the menu item for elevations information offers.
+Sometimes it is helpful to get information about a location at the click of a mouse. The [Mapbox Tilequery API](https://docs.mapbox.com/api/maps/#tilequery) allows you to retrieve features from vector tilesets based on a given longitude and latitude. The menu item for elevations information offers an example for getting the elevation of a location an show this in a text field in the lef upper corner of the map.
 
 #### Adapt to your wishes
+
+In the starter you can see an [example](https://github.com/astridx/gatsby-starter-mapbox-examples/blob/da0f115b8bc8c52d0b7063ede429d1ce5fb99b92/src/pages/map-full-plus-find-elevation.jsx#L14) for querying the height above sea level. You have the option to query and display other geodata. Test and learn about the Tilequery API in the [Playground](https://docs.mapbox.com/playground/tilequery/).
 
 ### Layer Switcher
 
-![Full Screen Map with GeoJSON and Layer Control Layer Switcher Gatsby Mapbox GL Starter](https://user-images.githubusercontent.com/9974686/97588801-269a5180-19fd-11eb-8240-4c60935efd82.png)
+![Full Screen Map with GeoJSON and Layer Control Layer Switcher Gatsby Mapbox GL Starter](https://user-images.githubusercontent.com/9974686/97810146-15a64600-1c72-11eb-8043-2ddf5c0e81f6.png)
+
+Do you want to display a lot of geospatial data? Then it makes sense to add them in a separate file. In addition, you might want to show and hide them as needed?
 
 #### Adapt to your wishes
 
+The page [show-and-hide-layers](https://github.com/astridx/gatsby-starter-mapbox-examples/blob/da0f115b8bc8c52d0b7063ede429d1ce5fb99b92/src/pages/map-show-and-hide-layers.jsx#L3) shows you how to integrate data and components. If you want to use other data in another map of the website, simply create a new file similar to [this](https://github.com/astridx/gatsby-starter-mapbox-examples/blob/master/src/constants/layercontrol.js) one in the constants folder and import it.
 
 ### Swipe between maps
 
-![Full Screen Map Gatsby Mapbox GL Starter(2)](https://user-images.githubusercontent.com/9974686/97588806-2732e800-19fd-11eb-869f-cee5146d5ce8.png)
+![Full Screen Map Gatsby Mapbox GL Starter with Swipe to compare](https://user-images.githubusercontent.com/9974686/97810147-16d77300-1c72-11eb-8573-d464b249af22.png)
 
-Different information can be highlighted with different maps. This function offers a comparison between different cards.
+Different information can be highlighted with different maps. This function offers a comparison between different maps.
 
-https://astridx.github.io/mapboxexamples/plugins/mapbox-gl-compare-swipe-between-maps.html
+See this [example](https://astridx.github.io/mapboxexamples/plugins/mapbox-gl-compare-swipe-between-maps.html)
 
 #### Adapt to your wishes
 
-
-
+Add the component [swipemap](https://github.com/astridx/gatsby-starter-mapbox-examples/blob/da0f115b8bc8c52d0b7063ede429d1ce5fb99b92/src/pages/map-swipe.jsx#L9).
 
 ### Directions
 
-![Full Screen Map with Route Gatsby Mapbox GL Starter](https://user-images.githubusercontent.com/9974686/97588809-28641500-19fd-11eb-8d8f-4b577ccfd722.png)
+![Full Screen Map with Route / Directions Gatsby Mapbox GL Starter](https://user-images.githubusercontent.com/9974686/97810148-1808a000-1c72-11eb-86cd-77aa3f72a7b8.png)
 
 What is the best way to get from A to B. Or: I want to show you how I got from A to B. The second was my requirement. I show special points along this route with markers.
 
@@ -164,20 +158,14 @@ What is the best way to get from A to B. Or: I want to show you how I got from A
 
 ### Style Switcher
 
-![Full Screen Map with Route Gatsby Mapbox GL Starter(1)](https://user-images.githubusercontent.com/9974686/97588813-28fcab80-19fd-11eb-8831-b7486a02df5f.png)
-
+![Full Screen Map with Style Switcher Gatsby Mapbox GL Starter](https://user-images.githubusercontent.com/9974686/97810149-18a13680-1c72-11eb-9efa-7fbfe67efd11.png)
 
 #### Adapt to your wishes
 
 
 ### Scale Control
 
-![Full Screen Map with Route Gatsby Mapbox GL Starter(2)](https://user-images.githubusercontent.com/9974686/97588818-29954200-19fd-11eb-899e-c76bfbc4e3c0.png)
-
+![Full Screen Map with Scale Control Gatsby Mapbox GL Starter](https://user-images.githubusercontent.com/9974686/97810150-18a13680-1c72-11eb-8843-2e16801738e9.png)
 
 #### Adapt to your wishes
-
-
-
-
 

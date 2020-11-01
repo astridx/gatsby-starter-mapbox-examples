@@ -82,7 +82,7 @@ const Swipemap = ({
 
     const map2 = new mapboxgl.Map({
       container: 'zwei',
-      style: `mapbox://styles/mapbox/${styles[3]}`,
+      style: `mapbox://styles/mapbox/${styles[1]}`,
       center: mapCenter,
       zoom: mapZoom,
       minZoom,
