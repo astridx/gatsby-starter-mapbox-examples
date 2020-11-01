@@ -1,6 +1,7 @@
 const googleAnalyticsId = `UA-XXXXX`
 
 module.exports = {
+  pathPrefix: `/gatsbystarter/gatsby-starter-mapbox-examples`,
   siteMetadata: {
     siteUrl: `https://gatsby-starter-mapbox.netlify.com/`,
     title: `Gatsby Mapbox GL Starter`,

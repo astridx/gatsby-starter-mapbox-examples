@@ -8,6 +8,8 @@ Because Mapbox GL is provided as a native JS object within `components/Map/index
 
 [Demo](https://astridx.github.io/gatsbystarter/gatsby-starter-mapbox-examples/)
 
+The menu items in the navigation can be changed in the file `gatsby-starter-mapbox-examples/src/components/Layout/Header.jsx`!
+
 ## Installation
 
 ### Gatsby

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Text } from 'rebass'
-import { FaGlobeAmericas as SiteLogo } from 'react-icons/fa'
+import { SiMapbox as SiteLogo } from 'react-icons/si'
 
 import { Link } from 'components/Link'
 
