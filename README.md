@@ -143,7 +143,7 @@ See this [example](https://astridx.github.io/mapboxexamples/plugins/mapbox-gl-co
 
 #### Adapt to your wishes
 
-Add the component [swipemap](https://github.com/astridx/gatsby-starter-mapbox-examples/blob/da0f115b8bc8c52d0b7063ede429d1ce5fb99b92/src/pages/map-swipe.jsx#L9).
+Add the component  `<Swipemap />` like in in this [page](https://github.com/astridx/gatsby-starter-mapbox-examples/blob/da0f115b8bc8c52d0b7063ede429d1ce5fb99b92/src/pages/map-swipe.jsx#L9):  `<Swipemap styles={['streets-v11', 'satellite-v9']} />`. You have to use two styles as parameters to be able to compare them. If you add more styles, they will be added to the left map in a layer switcher. So you can show all styles and compare them with the map on the right.
 
 ### Directions
 
@@ -153,14 +153,21 @@ What is the best way to get from A to B. Or: I want to show you how I got from A
 
 #### Adapt to your wishes
 
+You can see in the [example page](https://github.com/astridx/gatsby-starter-mapbox-examples/blob/master/src/pages/map-direction.jsx#L11) how you can add the directions plugin. You enter the data for the plugin in an [extra file](https://github.com/astridx/gatsby-starter-mapbox-examples/blob/master/src/constants/directions.js). You can use different routes. To do this, create a file similar to [this](https://github.com/astridx/gatsby-starter-mapbox-examples/blob/master/src/constants/directions.js) one in the constants directory and import it into the page in which the route should be displayed.
 
+For all options of the plugin directions see the [Documentation](https://docs.mapbox.com/api/navigation/#directions).
 
+Points of interest you can add via the parameter `pois`. Here you need to add the longitude, the latitude and a text for a popup.
 
 ### Style Switcher
 
 ![Full Screen Map with Style Switcher Gatsby Mapbox GL Starter](https://user-images.githubusercontent.com/9974686/97810149-18a13680-1c72-11eb-9efa-7fbfe67efd11.png)
 
+In previous examples you may have already seen that you can use the parameter `styles` with more than one entry (for example like this `<Map styles={['streets-v11', 'satellite-v9']} />`) for showing a style control in the form of an image at the bottom left. In addition it is possible to show a control with text links. 
+
 #### Adapt to your wishes
+
+The example on [this page](https://github.com/astridx/gatsby-starter-mapbox-examples/blob/bb3fefdbda2e6b2d3e9f2bc62e573cf4a0fc0b9a/src/pages/map-style-switcher.jsx#L13) shows how to do this. You need to add (styleSwitcherData](https://github.com/astridx/gatsby-starter-mapbox-examples/blob/master/src/constants/styles.js). styleSwitcherData are the title you like to display in the control for activation of this style and the [style uri](https://docs.mapbox.com/help/glossary/style-url/).
 
 
 ### Scale Control
@@ -169,3 +176,4 @@ What is the best way to get from A to B. Or: I want to show you how I got from A
 
 #### Adapt to your wishes
 
+The example on [this page](https://github.com/astridx/gatsby-starter-mapbox-examples/blob/bb3fefdbda2e6b2d3e9f2bc62e573cf4a0fc0b9a/src/pages/map-scale-control.jsx#L11) shows how to do this.
