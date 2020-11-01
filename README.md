@@ -45,7 +45,7 @@ There is a menu item for each example.
 
 ### Full Screen Map
 
-![Full Screen Map Gatsby Mapbox GL Starter](https://user-images.githubusercontent.com/9974686/97810139-0f17ce80-1c72-11eb-987f-aea7edadfd6f.png)
+[![Full Screen Map Gatsby Mapbox GL Starter](https://user-images.githubusercontent.com/9974686/97810139-0f17ce80-1c72-11eb-987f-aea7edadfd6f.png)](https://astridx.github.io/gatsbystarter/gatsby-starter-mapbox-examples/map-full)
 
 #### Adapt to your wishes
 
@@ -78,7 +78,7 @@ You can provide optional configuration (for example `sources` and `layers`) acco
 
 ### Map with Sidebar
 
-![Map with Sidebar Gatsby Mapbox GL Starter](https://user-images.githubusercontent.com/9974686/97810141-117a2880-1c72-11eb-92b1-6410facee11d.png)
+[![Map with Sidebar Gatsby Mapbox GL Starter](https://user-images.githubusercontent.com/9974686/97810141-117a2880-1c72-11eb-92b1-6410facee11d.png)](https://astridx.github.io/gatsbystarter/gatsby-starter-mapbox-examples/map)
 
 #### Adapt to your wishes
 
@@ -86,7 +86,7 @@ This [example](https://github.com/astridx/gatsby-starter-mapbox-examples/blob/da
 
 ### Map with GeoJson Layer (simple)
 
-![Full Screen Map with GeoJSON Gatsby Mapbox GL Starter](https://user-images.githubusercontent.com/9974686/97810142-12ab5580-1c72-11eb-95a9-ae56e83cc71b.png)
+[![Full Screen Map with GeoJSON Gatsby Mapbox GL Starter](https://user-images.githubusercontent.com/9974686/97810142-12ab5580-1c72-11eb-95a9-ae56e83cc71b.png)](https://astridx.github.io/gatsbystarter/gatsby-starter-mapbox-examples/map-geojson-simple)
 
 #### Adapt to your wishes
 
@@ -94,7 +94,7 @@ You add a few geodata directly in the code via JSON souce and layer. The [exampl
 
 ### Scroll Fly To
 
-![Map with Scroll Fly To in Gatsby Mapbox GL Starter](https://user-images.githubusercontent.com/9974686/97810143-13dc8280-1c72-11eb-9c7a-ba29536eeedd.png)
+[![Map with Scroll Fly To in Gatsby Mapbox GL Starter](https://user-images.githubusercontent.com/9974686/97810143-13dc8280-1c72-11eb-9c7a-ba29536eeedd.png)](https://astridx.github.io/gatsbystarter/gatsby-starter-mapbox-examples/scrollflyto)
 
 This feature allows you to tell a story using the map.
 
@@ -115,7 +115,7 @@ speed | The average speed of the animation.
 
 ### Find elevations with the Tilequery API 
 
-![Full Screen Map Gatsby Mapbox GL Starter with Query for getting elevation](https://user-images.githubusercontent.com/9974686/97810145-14751900-1c72-11eb-8730-a898c8068eb4.png)
+[![Full Screen Map Gatsby Mapbox GL Starter with Query for getting elevation](https://user-images.githubusercontent.com/9974686/97810145-14751900-1c72-11eb-8730-a898c8068eb4.png)](https://astridx.github.io/gatsbystarter/gatsby-starter-mapbox-examples/map-full-plus-find-elevation)
 
 Sometimes it is helpful to get information about a location at the click of a mouse. The [Mapbox Tilequery API](https://docs.mapbox.com/api/maps/#tilequery) allows you to retrieve features from vector tilesets based on a given longitude and latitude. The menu item for elevations information offers an example for getting the elevation of a location an show this in a text field in the lef upper corner of the map.
 
@@ -125,9 +125,9 @@ In the starter you can see an [example](https://github.com/astridx/gatsby-starte
 
 ### Layer Switcher
 
-![Full Screen Map with GeoJSON and Layer Control Layer Switcher Gatsby Mapbox GL Starter](https://user-images.githubusercontent.com/9974686/97810146-15a64600-1c72-11eb-8043-2ddf5c0e81f6.png)
+[![Full Screen Map with GeoJSON and Layer Control Layer Switcher Gatsby Mapbox GL Starter](https://user-images.githubusercontent.com/9974686/97810146-15a64600-1c72-11eb-8043-2ddf5c0e81f6.png)](https://astridx.github.io/gatsbystarter/gatsby-starter-mapbox-examples/map-show-and-hide-layers)
 
-Do you want to display a lot of geospatial data? Then it makes sense to add them in a separate file. In addition, you might want to show and hide them as needed?
+Do you want to display a lot of geospatial data? Then it makes sense to add them in a separate file. In addition, you might want to show and hide them as needed? So you can create a custom layer switcher to display different datasets.
 
 #### Adapt to your wishes
 
@@ -135,7 +135,7 @@ The page [show-and-hide-layers](https://github.com/astridx/gatsby-starter-mapbox
 
 ### Swipe between maps
 
-![Full Screen Map Gatsby Mapbox GL Starter with Swipe to compare](https://user-images.githubusercontent.com/9974686/97810147-16d77300-1c72-11eb-8573-d464b249af22.png)
+[![Full Screen Map Gatsby Mapbox GL Starter with Swipe to compare](https://user-images.githubusercontent.com/9974686/97810147-16d77300-1c72-11eb-8573-d464b249af22.png)](https://astridx.github.io/gatsbystarter/gatsby-starter-mapbox-examples/map-swipe)
 
 Different information can be highlighted with different maps. This function offers a comparison between different maps.
 
@@ -147,7 +147,7 @@ Add the component  `<Swipemap />` like in in this [page](https://github.com/astr
 
 ### Directions
 
-![Full Screen Map with Route / Directions Gatsby Mapbox GL Starter](https://user-images.githubusercontent.com/9974686/97810148-1808a000-1c72-11eb-86cd-77aa3f72a7b8.png)
+[![Full Screen Map with Route / Directions Gatsby Mapbox GL Starter](https://user-images.githubusercontent.com/9974686/97810148-1808a000-1c72-11eb-86cd-77aa3f72a7b8.png)](https://astridx.github.io/gatsbystarter/gatsby-starter-mapbox-examples/map-direction)
 
 What is the best way to get from A to B. Or: I want to show you how I got from A to B. The second was my requirement. I show special points along this route with markers.
 
@@ -161,7 +161,7 @@ Points of interest you can add via the parameter `pois`. Here you need to add th
 
 ### Style Switcher
 
-![Full Screen Map with Style Switcher Gatsby Mapbox GL Starter](https://user-images.githubusercontent.com/9974686/97810149-18a13680-1c72-11eb-9efa-7fbfe67efd11.png)
+[![Full Screen Map with Style Switcher Gatsby Mapbox GL Starter](https://user-images.githubusercontent.com/9974686/97810149-18a13680-1c72-11eb-9efa-7fbfe67efd11.png)](https://astridx.github.io/gatsbystarter/gatsby-starter-mapbox-examples/map-style-switcher)
 
 In previous examples you may have already seen that you can use the parameter `styles` with more than one entry (for example like this `<Map styles={['streets-v11', 'satellite-v9']} />`) for showing a style control in the form of an image at the bottom left. In addition it is possible to show a control with text links. 
 
@@ -172,7 +172,7 @@ The example on [this page](https://github.com/astridx/gatsby-starter-mapbox-exam
 
 ### Scale Control
 
-![Full Screen Map with Scale Control Gatsby Mapbox GL Starter](https://user-images.githubusercontent.com/9974686/97810150-18a13680-1c72-11eb-8843-2e16801738e9.png)
+[![Full Screen Map with Scale Control Gatsby Mapbox GL Starter](https://user-images.githubusercontent.com/9974686/97810150-18a13680-1c72-11eb-8843-2e16801738e9.png)](https://astridx.github.io/gatsbystarter/gatsby-starter-mapbox-examples/map-scale-control)
 
 #### Adapt to your wishes
 
